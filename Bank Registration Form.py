@@ -1,6 +1,3 @@
-# 16s2084@stu.hct.edu.om
-# +968 97797959
-
 import tkinter as tk
 from tkinter import messagebox
 import tkinter.ttk as ttk
