@@ -1,1 +1,175 @@
 # Bank-Registration-Form
+
+ADD_MEMBER_DATA() 
+This function is used to add a new member's 
+data to the member_data list. This function 
+first checks if the email address and credit 
+card number are valid, and then checks if 
+the data for the new member is unique. If the 
+data is valid and unique, the function adds 
+the data to the member_data list and reloads 
+the data into the record_table widget.
+
+LOAD_MEMBER_DATA() 
+This function is used to load the data for all 
+members stored in the member_data list into a 
+Treeview widget called record_table. This 
+Treeview widget allows the user to view the 
+data for each member in a tabular format. The 
+function first clears any existing data in the 
+record_table widget and then inserts each 
+element from the member_data list as a new 
+row in the record_table widget.
+
+DELETE_MEMBER_DATA() 
+This function is used to delete the data for an 
+existing member from the member_data list. 
+This function deletes the data for the 
+member at the specified index in the 
+member_data list, reloads the data for all 
+members into the record_table widget, and 
+clears the data in the entry widgets where 
+the user can enter the data for a new 
+member. This ensures that the member_data 
+list and the record_table widget are updated 
+and the entry widgets are ready for the user 
+to enter data for a new member.
+
+UPDATE_MEMBER_DATA() 
+This function is used to update the data for an 
+existing member in the member_data list. This 
+function updates the data for the member at 
+the specified index in the member_data list 
+with the new data provided, and then calls the 
+load_member_data() function to reload the 
+data for all members into the record_table 
+widget. This ensures that the updated data for 
+the member is displayed in the record_table 
+widget.
+
+CLEAR_MEMBER_DATA() 
+function is used to clear the data in the entry 
+widgets where the user can enter the data for 
+a new member, the search entry widget, and 
+the record_table widget. This function uses 
+the delete() method to clear the data in the 
+entry and search widgets and then calls the 
+load_member_data() function to reload the 
+data for all members into the record_table 
+widget. This ensures that the entry and 
+search widgets are empty and the 
+record_table widget is ready for the user to 
+enter and view data for new members.
+
+PUT_MEMBER_IN_ENTRY() 
+This function is used to display the data for a 
+selected member in the entry widgets where 
+the user can enter the data for a new member. 
+This function clears the data in the entry 
+widgets, gets the data for the selected member 
+from the member_data list, and inserts the data 
+into the entry widgets. This allows the user to 
+view and update the data for the selected
+member.
+
+--------------------------------------------------------
+
+ADD_MEMBER_DATA() 
+ 
+THE ADD_MEMBER_DATA() FUNCTION IS USED TO ADD A NEW MEMBER'S DATA TO THE 
+MEMBER_DATA LIST. THIS FUNCTION TAKES FOUR PARAMETERS: THE MEMBER ID, NAME, EMAIL 
+ADDRESS, AND CREDIT CARD NUMBER.
+FIRST, THE FUNCTION USES A REGULAR EXPRESSION PATTERN TO CHECK IF T HE EMAIL ADDRESS 
+IS VALID. IF THE EMAIL ADDRESS IS NOT VALID, THE FUNCTION DISPLAYS AN ERROR MESSAGE 
+TO THE USER AND RETURNS.
+NEXT, THE FUNCTION CHECKS IF THE CREDIT CARD NUMBER IS A 14 -DIGIT NUMBER. IF IT IS 
+NOT, THE FUNCTION DISPLAYS AN ERROR MESSAGE AND RETURNS.
+FINALLY, THE FUNCTION CHECKS IF THE DATA FOR THE NEW MEMBER ALREADY EXISTS IN THE 
+MEMBER_DATA LIST. IF IT DOES, THE FUNCTION DISPLAYS AN ERROR MESSAGE TO THE USER. IF 
+THE DATA IS UNIQUE, THE FUNCTION ADDS THE DATA TO THE MEMBER_DATA LIST AND TH EN 
+CALLS THE LOAD_MEMBER_DATA() FUNCTION TO RELOAD THE DATA INTO THE RECORD_TABLE 
+WIDGET. THIS ENSURES THAT THE NEW MEMBER'S DATA IS DISPLAYED IN THE RECORD_TABLE 
+WIDGET.
+
+--------------------------------------------------------
+
+LOAD_MEMBER_DATA() 
+
+THE LOAD_MEMBER_DATA() FUNCTION IS USED TO LOAD THE DATA FOR ALL MEMBERS STORED 
+IN THE MEMBER_DATA LIST INTO A TREEVIEW WIDGET CALLED RECORD_TABLE. THIS TREEVIEW 
+WIDGET ALLOWS THE USER TO VIEW THE DATA FOR EACH MEMBER IN A TABULAR FORMAT.
+THE LOAD_MEMBER_DATA() FUNCTION FIRST LOOPS THROUGH ALL THE ITEMS IN THE 
+RECORD_TABLE WIDGET AND DELETES THEM. THIS ENSURES THAT THE RECORD_TABLE WIDGET 
+IS EMPTY BEFORE THE NEW MEMBER DATA IS ADDED TO IT.
+NEXT, THE FUNCTION LOOPS THROUGH ALL THE ELEMENTS IN THE MEMBER_DATA LIST AND 
+INSERTS EACH ELEMENT INTO THE RECORD_TABLE WIDGET AS A NEW ROW. THE PARENT, INDEX, 
+TEXT, AND IID PARAMETERS OF THE INSERT() METHOD ARE USED TO SPECIFY THE PARENT ITEM, 
+THE POSITION WHERE THE NEW ITEM SHOULD BE INSERTED, THE TEXT TO BE DISPLAYED, AND 
+THE ITEM IDENTIFIER, RESPECTIVELY. THE VALUES PARAMETER IS USED TO SPECIFY THE VALUES 
+TO BE DISPLAYED IN THE ROW. THIS ALLOWS THE DATA FOR EACH MEMBER TO BE DISPLAYED IN 
+THE APPROPRIATE COLUMNS OF THE RECORD_TABLE WIDGET.
+
+--------------------------------------------------------
+
+DELETE_MEMBER_DATA() 
+ 
+THE DELETE_MEMBER_DATA() FUNCTION IS USED TO DELETE THE DATA FOR AN EXISTING 
+MEMBER FROM THE MEMBER_DATA LIST. THIS FUNCTION TAKES THE INDEX OF THE MEMBER IN 
+THE MEMBER_DATA LIST AS A PARAMETER.
+FIRST, THE FUNCTION USES THE DEL KEYWORD TO DELETE THE DATA FOR THE MEMBER AT THE 
+SPECIFIED INDEX IN THE MEMBER_DATA LIST.
+NEXT, THE FUNCTION CALLS THE LOAD_MEMBER_DATA() FUNCTION TO RELOAD THE DATA FOR 
+ALL MEMBERS INTO THE RECORD_TABLE WIDGET. THIS ENSURES THAT THE DATA FOR THE 
+DELETED MEMBER IS REMOVED FROM THE RECORD_TABLE WIDGET.
+FINALLY, THE FUNCTION CALLS THE CLEAR_MEMBER_DATA() FUNCTION TO CLEAR THE DATA IN 
+THE ENTRY WIDGETS WHERE THE USER CAN ENTER THE DATA FOR A NEW MEMBER. THIS 
+ENSURES THAT THE ENTRY WIDGETS ARE EMPTY AND READY FOR THE USER TO ENTER DATA FOR 
+A NEW MEMBER.
+
+--------------------------------------------------------
+
+UPDATE_MEMBER_DATA() 
+ 
+THE UPDATE_MEMBER_DATA() FUNCTION IS USED TO UPDATE THE DATA FOR AN EXISTING 
+MEMBER IN THE MEMBER_DATA LIST. THIS FUNCTION TAKES FIVE P ARAMETERS: THE MEMBER 
+ID, NAME, EMAIL ADDRESS, CREDIT CARD NUMBER, AND THE INDEX OF THE MEMBER IN THE 
+MEMBER_DATA LIST.
+FIRST, THE FUNCTION UPDATES THE DATA FOR THE MEMBER AT THE SPECIFIED INDEX IN THE 
+MEMBER_DATA LIST WITH THE NEW DATA PROVIDED.
+NEXT, THE FUNCTION CALLS THE LOAD_MEMBER_DATA() FUNCTION TO RELOAD THE DATA FOR 
+ALL MEMBERS INTO THE RECORD_TABLE WIDGET. THIS ENSURES THAT THE UPDATED DATA FOR 
+THE MEMBER IS DISPLAYED IN THE RECORD_TABLE WIDGET.
+
+--------------------------------------------------------
+
+PUT_MEMBER_IN_ENTRY() 
+
+THE PUT_MEMBER_IN_ENTRY() FUNCTION IS USED TO DISPLAY THE DATA FOR A SELECTED 
+MEMBER IN THE ENTRY WIDGETS WHERE THE USER CAN ENTER THE DATA FOR A NEW MEMBER. 
+THIS FUNCTION TAKES THE INDEX OF THE SELECTED MEMBER IN THE MEMBER_DATA LIST AS A 
+PARAMETER.
+FIRST, THE FUNCTION CLEARS THE DATA IN THE ENTRY WIDGETS USING THE DELETE() METHOD. 
+THIS ENSURES THAT THE ENTRY WIDGETS ARE EMPTY BEFORE THE DATA FOR THE SELECTED 
+MEMBER IS INSERTED INTO THEM.
+NEXT, THE FUNCTION GETS THE DATA FOR THE SELECTED MEMBER FROM THE MEMBER_DATA 
+LIST AND SAVES IT IN SEPARATE VARIABLES.
+FINALLY, THE FUNCTION INSERTS THE DATA FOR THE SELECTED MEMBER INTO THE ENTRY 
+WIDGETS USING THE INSERT() METHOD. THIS ALLOWS THE USER TO VIEW THE DATA FOR THE 
+SELECTED MEMBER AND MAKE ANY NECESSARY CHANGES. THE USER CAN THEN CLICK THE 
+"UPDATE" BUTTON TO UPDATE THE DATA FOR THE SELECTED MEMBER IN THE MEMBER_DATA 
+LIST.
+
+--------------------------------------------------------
+
+CLEAR_MEMBER_DATA() 
+
+THE CLEAR_MEMBER_DATA() FUNCTION IS USED TO CLEAR THE DATA IN THE ENTRY WIDGETS 
+WHERE THE USER CAN ENTER THE DATA FOR A NEW MEMBER, AS WELL AS THE SEARCH ENTRY 
+WIDGET AND THE RECORD_TABLE WIDGET. THIS FUNCTION DOES NOT TAKE ANY PARAMETERS.
+FIRST, THE FUNCTION USES THE DELETE() METHOD TO CLEAR THE DATA IN THE ENTRY W IDGETS 
+WHERE THE USER CAN ENTER THE DATA FOR A NEW MEMBER.
+NEXT, THE FUNCTION USES THE DELETE() METHOD TO CLEAR THE DATA IN THE SEARCH ENTRY 
+WIDGET.
+FINALLY, THE FUNCTION CALLS THE LOAD_MEMBER_DATA() FUNCTION TO RELOAD THE DATA FOR 
+ALL MEMBERS INTO THE RECORD_TABLE WIDGET. THIS ENSURES THAT THE RECORD_TABLE 
+WIDGET IS EMPTY AND READY FOR THE USER TO ENTER AND VIEW DATA FOR NEW MEMBERS.
